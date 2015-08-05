@@ -560,3 +560,60 @@ if (lost==true)                                //If we lost the game, reset now 
 
 
 }
+
+
+void keyPressed()
+{
+  if(key=='r')//this is where you reset the game when you press 'r'
+  {
+     minim.stop() ;
+    setup();
+  //  draw();
+
+     totalSquares = 0; 
+   
+     fill(255);
+
+     score=0;
+     power=0;
+    loop();
+  }
+   if(key=='p')//this will pause the game when you press 'p'
+  {
+       au_player3.play(10) ; 
+    noLoop();
+       image(img6,0,0);
+   
+    text("Game is Paused",450,60);
+    text("Press 'l' key to resume the game",450,80);
+    fill(255);
+    text("(1)Colliding with the grey asteroid loses a life", 380, 120);   
+    text("(2).Colliding with the red asteroid gives a point", 380,175);
+    text("(3).Colliding with the blue asteroid gains a life",380,230);
+    text("(4).Colliding with the green asteroid gives ",380,285);
+    text("you energy to create black holes",330,315);
+    text("(5).Colliding with a mini star gives you fuel",340,370);
+    text("(6)If you run out of fuel, your controls are in reverse",350,425);
+    text("You need to go to the sun to get more fuel",380,455);
+    text("(7)You control the spaceship using w,a,s,d",380,510);
+    text("and shoot using the space key",450,540);
+    fill(255,0,0);
+    textSize(30);
+    text("Press 'r' to restart",450,580);
+       
+
+
+
+    
+    
+    
+    
+    
+  }
+    if(key=='l')//this will resume the game when 'l'is pressed
+    {
+      loop();
+    }
+
+
+}
